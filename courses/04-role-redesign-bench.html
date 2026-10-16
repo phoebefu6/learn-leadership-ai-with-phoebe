@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 4 of 6. The role-redesign bench: 34 occupations and 624 real O*NET 31.0 task statements with published exposure labels, computed in your browser. Walk the ladder from the naive exposed share to a board range with review load and demand rebound added back, then try the anti-lever, counting saved hours as a headcount cut, and the break button.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="The role-redesign bench - learn leadership ai with phoebe">
+<meta property="og:description" content="Session 4 of 6. Real task rows, your assumptions, a computed ladder from naive exposure to a board range, and the cut that leaves the review unstaffed.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-leadership-ai-with-phoebe/courses/04-role-redesign-bench.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-leadership-ai-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The role-redesign bench - learn leadership ai with phoebe">
+<meta name="twitter:description" content="Session 4 of 6. Real O*NET tasks, a computed ladder, the anti-lever and the break button.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-leadership-ai-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 4 · The role-redesign bench - learn leadership ai with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-leadership-ai-with-phoebe</a> / Session 4 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Leadership in the Age of AI · Session 4 of 6</div>
+    <h1>The <span class="accent">role-redesign</span> bench</h1>
+    <p class="sub">Sessions 1 to 3 built the argument: a role is a bundle of tasks, a freed hour has four places to go, and the junior rung is where cuts land first. Tonight the argument becomes arithmetic. The bench holds 34 occupations a professional-services firm employs, with all 624 of their O*NET 31.0 task statements and the published exposure label on each, and computes in your browser what a role's capacity really does as you add the things a naive case leaves out. You set the assumptions; the bench shows what they cost, prints the number a headcount cut on saved hours would get wrong, and lets you break it on purpose to see how rosy a case gets when review is free.</p>
+    <div class="chip-row">
+      <span class="chip level">🔴 Bench night</span>
+      <span class="chip audience">C-suite and board</span>
+      <span class="chip audience">Bring your session 1 inventory</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:2">3-10 · The eight steps</span>
+      <span class="a3" style="flex:6">10-36 · The bench, rung by rung</span>
+      <span class="a4" style="flex:2">36-45 · Evidence, Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Three kinds of number sit on the bench, and each one carries its tag. <strong>Real:</strong> the task statements, importance and frequency ratings of 34 occupations from the O*NET 31.0 Database, and the task-level exposure labels released with Eloundou, Manning, Mishkin and Rock's 2023 study, both read from the published files. <strong>Constructed:</strong> Marlowe Group, the invented 4,000-person firm, with 3,660 of its people spread across those 34 roles and a junior grade in each. <strong>Modelled:</strong> every speed-up, review, demand and cost figure, each one an assumption with a default taken from the source map and a slider you can move.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">real = read from O*NET 31.0 and the released labels</span>
+      <span class="pill">modelled = a stated assumption applied to the real tasks</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A five-rung ladder that turns a role's task list into a capacity range a board can question, the size of the gap between the naive exposed share and that range for Marlowe's largest role and for the whole firm, the decision the anti-lever gets wrong and by how much, and a habit of asking any AI business case what happens to its number when review time goes back in.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers what the bench computes</span>
+      <h2>How a role becomes a number</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">The bench runs the same eight steps for every role, in the browser and in an independent Python reference run that checked every number on this page. Two steps are real data, one is a proxy, and the rest are assumptions you can see and move. The ladder rungs add the steps one at a time, so you can watch which step moves the number most.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Eight steps in two rows. Top row, left to right: task rows from O*NET 31.0, real; the exposure label E0, E1 or E2, real; a time share per task, a proxy from importance times frequency; time saved per exposed task, an assumption. Bottom row, right to left: minus review time on every exposed task, an assumption, highlighted; minus the share absorbed by new demand, an assumption; FTE-equivalent at Marlowe, constructed headcount; and the range for the board, modelled. Rung numbers mark where each rung starts.">
+        <defs>
+          <filter id="b4aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="43" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b4aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#AE1941" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="b4aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#2B1A1E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .b4aH { font: 800 12px Inter, sans-serif; fill: #2B1A1E; }
+          .b4aL { font: 600 12px Inter, sans-serif; fill: #2B1A1E; }
+          .b4aS { font: 400 11px Inter, sans-serif; fill: #6B595D; }
+          .b4aB { font: 800 11px Inter, sans-serif; fill: #6B4E1C; }
+          .b4aA { font: 700 11px Inter, sans-serif; fill: #AE1941; }
+          .b4aN { font: 400 12px Inter, sans-serif; fill: #6B595D; }
+        </style>
+
+        <text class="b4aH" x="30" y="26">FROM TASK ROWS TO A BOARD RANGE, IN EIGHT STEPS</text>
+
+        <g filter="url(#b4aSk)" fill="none" stroke="#2B1A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="40" y="56" width="170" height="56" rx="10" transform="rotate(-0.6 125 84)" fill="url(#b4aHc)"/>
+          <rect x="250" y="56" width="170" height="56" rx="10" transform="rotate(0.5 335 84)" fill="#FFFFFF"/>
+          <rect x="460" y="56" width="170" height="56" rx="10" transform="rotate(-0.4 545 84)" fill="#FCEFF2"/>
+          <rect x="670" y="56" width="170" height="56" rx="10" transform="rotate(0.6 755 84)" fill="#FCEFF2"/>
+          <rect x="670" y="176" width="170" height="56" rx="10" transform="rotate(-0.5 755 204)" fill="#E9D8B4"/>
+          <rect x="460" y="176" width="170" height="56" rx="10" transform="rotate(0.4 545 204)" fill="#FCEFF2"/>
+          <rect x="250" y="176" width="170" height="56" rx="10" transform="rotate(-0.6 335 204)" fill="#FFFFFF"/>
+          <rect x="40" y="176" width="170" height="56" rx="10" transform="rotate(0.5 125 204)" fill="#FFFFFF"/>
+          <path d="M214 84 L244 84" marker-end="url(#b4aAr)"/>
+          <path d="M424 84 L454 84" marker-end="url(#b4aAr)"/>
+          <path d="M634 84 L664 84" marker-end="url(#b4aAr)"/>
+          <path d="M846 96 C866 130 866 160 846 192" marker-end="url(#b4aAr)"/>
+          <path d="M666 204 L636 204" marker-end="url(#b4aAr)"/>
+          <path d="M456 204 L426 204" marker-end="url(#b4aAr)"/>
+          <path d="M246 204 L216 204" marker-end="url(#b4aAr)"/>
+        </g>
+
+        <text class="b4aL" x="56" y="80">task rows</text>
+        <text class="b4aS" x="56" y="98">O*NET 31.0 · real</text>
+        <text class="b4aL" x="266" y="80">exposure label</text>
+        <text class="b4aS" x="266" y="98">E0, E1, E2 · real</text>
+        <text class="b4aL" x="476" y="80">time share</text>
+        <text class="b4aS" x="476" y="98">importance x frequency · proxy</text>
+        <text class="b4aL" x="686" y="80">time saved</text>
+        <text class="b4aS" x="686" y="98">E1 25%, E2 half · assumption</text>
+        <text class="b4aL" x="686" y="200">minus review time</text>
+        <text class="b4aB" x="686" y="218">10% per exposed task</text>
+        <text class="b4aL" x="476" y="200">minus absorbed demand</text>
+        <text class="b4aS" x="476" y="218">25% of freed · assumption</text>
+        <text class="b4aL" x="266" y="200">FTE at Marlowe</text>
+        <text class="b4aS" x="266" y="218">headcount · constructed</text>
+        <text class="b4aL" x="56" y="200">range for the board</text>
+        <text class="b4aS" x="56" y="218">slow and fast cases</text>
+
+        <text class="b4aA" x="125" y="134" text-anchor="middle">rung 1 counts these</text>
+        <text class="b4aA" x="545" y="134" text-anchor="middle">rung 2 adds these</text>
+        <text class="b4aA" x="755" y="254" text-anchor="middle">rung 3</text>
+        <text class="b4aA" x="545" y="254" text-anchor="middle">rung 4</text>
+        <text class="b4aA" x="125" y="254" text-anchor="middle">rung 5</text>
+
+        <text class="b4aN" x="30" y="284">Rung 1 skips the middle: it counts exposed tasks and calls that share of the job freed.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - two steps are facts, the rest are choices; the sand step is the one most business cases leave out</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The five rungs, in one sentence each<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Rung 1, naive:</strong> the share of the role's tasks labelled E1 or E2, read as the share of the job freed. It is the number a slide says when it says "82 percent of this role is exposed". <strong>Rung 2:</strong> each task weighted by its share of the week, and only the assumed speed-up saved on exposed tasks. <strong>Rung 3:</strong> review and verification time added back on every exposed task, because someone has to check the output. <strong>Rung 4:</strong> part of what is freed absorbed by new or rebounding demand. <strong>Rung 5:</strong> rung 4 at a slow case and a fast case, with the reskilling payback as a range, which is the only form a board should accept.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Every assumption, its default and where the default came from<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <tr><th>Assumption</th><th>Default</th><th>Slow to fast case</th><th>Why that default</th></tr>
+          <tr><td>Time saved on an E1 task</td><td>25%</td><td>14% to 50%</td><td>About the "roughly 25 percent faster" Dell'Acqua and colleagues reported inside the tool's range; 14% is Brynjolfsson and colleagues' average gain; 50% is the rubric's own threshold, which its authors expect real savings to fall below</td></tr>
+          <tr><td>Time saved on an E2 task</td><td>half of E1</td><td>follows E1</td><td>The half weight Eloundou and colleagues give E2 in their beta measure</td></tr>
+          <tr><td>Review time per exposed task</td><td>10% of its time</td><td>15% to 5%</td><td>No study measures it at firm scale; the METR trial shows checking can cost more than the tool saves</td></tr>
+          <tr><td>Freed capacity absorbed by demand</td><td>25%</td><td>50% to 0%</td><td>No firm-level estimate exists; Danish evidence finds reorganisation and new tasks</td></tr>
+          <tr><td>Time shares</td><td>importance x frequency</td><td>you edit them</td><td>O*NET has no hours per task; this is a proxy you replace with your session 1 hours</td></tr>
+          <tr><td>Reskill cost per person</td><td>0.03 to 0.08 FTE-years</td><td>the band</td><td>A modelled band, in FTE-years so that no salary appears anywhere</td></tr>
+        </table>
+        <p>The reskill band covers training time and programme cost for everyone in the role, expressed as a share of one person's loaded year. Payback is the band divided by the freed FTE per year, in months. If the slow case frees nothing, the bench says "never" rather than inventing a number.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="bench">
+    <div class="section-kicker">
+      <span class="klabel">Build-along · the bench</span>
+      <h2>34 real roles, five rungs, one anti-lever</h2>
+      <span class="tag demo">★ 26 min · the main event</span>
+    </div>
+    <p class="lede">The bench opens on Marlowe's management analysts, the eleven tasks from session 1, on the human annotators' labels. Work down the rungs in order and say out loud which step moved the number before you click the next one. Then pick the role you inventoried in session 1, or the closest one in the list, and paste your hours into the time-share column.</p>
+
+    <div id="rrb-bench" data-role="13-1111.00" data-live-bench></div>
+
+    <div class="callout tip">
+      <p><strong>Read it in this order.</strong> The verdict line first, then the tag on each number, then the ladder bars. For the management analysts on the defaults, the naive rung says 81.8% of the role is freed, 736.4 FTE of 900. Rung 2 says 11.8%. Review takes it to 3.9%, and demand rebound to 2.9%, which is 26.1 FTE. The board range on rung 5 runs from -48.0 to 177.4 FTE. Your numbers will differ as soon as you move an assumption, which is the point.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers what the ladder shows across Marlowe</span>
+      <h2>The naive case is not a little high, it is a different number</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Run the ladder for all 34 roles at once and add up the FTE-equivalents across Marlowe's 3,660 people in the sample. These are the numbers the bench prints on its defaults, written down so they can be argued with; an independent Python run agrees with the browser engine on every value.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Firm-wide FTE-equivalent freed across 34 roles and 3,660 people at Marlowe, on default assumptions and human labels. Rung 1 naive: 3,034.7. Rung 2 with time shares and speed-up: 474.7. Rung 3 with review: 171.5. Rung 4 with demand rebound: 128.7. Rung 5 board range: -188.9 to 797.8.">
+        <defs>
+          <filter id="b4bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="47" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b4bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#AE1941" stroke-width="1" opacity=".5"/></pattern>
+        </defs>
+        <style>
+          .b4bH { font: 800 12px Inter, sans-serif; fill: #2B1A1E; }
+          .b4bL { font: 600 12px Inter, sans-serif; fill: #2B1A1E; }
+          .b4bS { font: 400 11px Inter, sans-serif; fill: #6B595D; }
+          .b4bV { font: 800 13px Inter, sans-serif; fill: #741029; }
+          .b4bN { font: 400 12px Inter, sans-serif; fill: #6B595D; }
+        </style>
+
+        <text class="b4bH" x="30" y="26">FTE FREED ACROSS MARLOWE'S 3,660 PEOPLE IN THE SAMPLE, RUNG BY RUNG</text>
+
+        <g filter="url(#b4bSk)" fill="none" stroke="#2B1A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="260" y="56" width="480" height="30" rx="4" fill="url(#b4bHc)"/>
+          <rect x="260" y="112" width="75" height="30" rx="4" fill="#FCEFF2"/>
+          <rect x="260" y="168" width="27" height="30" rx="4" fill="#E9D8B4"/>
+          <rect x="260" y="224" width="20" height="30" rx="4" fill="#AE1941"/>
+          <rect x="260" y="280" width="126" height="30" rx="4" fill="#FCEFF2" stroke-dasharray="5 4"/>
+          <path d="M260 48 L260 318"/>
+        </g>
+
+        <text class="b4bL" x="240" y="70" text-anchor="end">1 · naive</text>
+        <text class="b4bS" x="240" y="84" text-anchor="end">exposed share as freed</text>
+        <text class="b4bL" x="240" y="126" text-anchor="end">2 · + time shares</text>
+        <text class="b4bS" x="240" y="140" text-anchor="end">and the speed-up</text>
+        <text class="b4bL" x="240" y="182" text-anchor="end">3 · + review load</text>
+        <text class="b4bS" x="240" y="196" text-anchor="end">10% per exposed task</text>
+        <text class="b4bL" x="240" y="238" text-anchor="end">4 · + demand rebound</text>
+        <text class="b4bS" x="240" y="252" text-anchor="end">25% absorbed</text>
+        <text class="b4bL" x="240" y="294" text-anchor="end">5 · board range</text>
+        <text class="b4bS" x="240" y="308" text-anchor="end">slow to fast case</text>
+        <text class="b4bV" x="750" y="77">3,034.7 FTE</text>
+        <text class="b4bV" x="345" y="133">474.7 FTE</text>
+        <text class="b4bV" x="297" y="189">171.5 FTE</text>
+        <text class="b4bV" x="290" y="245">128.7 FTE</text>
+        <text class="b4bV" x="396" y="301">-188.9 to 797.8 FTE</text>
+
+        <text class="b4bN" x="30" y="342">Human labels, default assumptions. Rung 1 is real labels read naively; rungs 2 to 5 are modelled.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the drop from the hatched bar to the second is not a correction, it is a different question: the naive bar counts tasks, the rest count time</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Finding 1: counting tasks is not counting time<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Across the 34 roles the naive rung frees 3,034.7 FTE of 3,660. Weighting tasks by time and saving only the assumed speed-up gives 474.7. The biggest single drop on the whole ladder is this one, and it needs no pessimism at all: a task labelled exposed is a task that could take less time, not a task that takes no time. Most of the gap is that difference.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Finding 2: review eats the software-dependent tasks<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Adding back 10 percent review time on every exposed task takes the firm from 474.7 to 171.5 FTE. The reason is the mix. In these roles most exposed tasks are E2, needing software on top; on the default an E2 task saves 12.5 percent of its time, and checking its output costs 10. An E1 task saves 25 and keeps 15. For the management analysts, seven of the nine exposed tasks are E2, which is why their rung 3 sits at 3.9%. A business case that leaves review out is mostly counting E2 savings that review would take back.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Finding 3: switch the labeller and the firm changes<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Switch the exposure labels to the GPT-4 classifier. The naive rung for the firm moves from 3,034.7 to 3,285.9 FTE and rung 4 from 128.7 to 135.5. Across the 34 roles, 108 of 624 tasks flip between exposed and not exposed with the rater. Neither label set is ground truth, as the study's authors say; a board paper names which one it used, and the bench lets you show both.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>What one field study measured, and what it did not.</strong> Brynjolfsson, Li and Raymond followed 5,179 customer-support agents: issues resolved per hour rose 14 percent on average, 34 percent for novice and low-skilled agents, with minimal effect for the most experienced. That is a throughput gain on one task in one firm, measured. It is the slow end of the bench's E1 range, not its default, because a support chat is closer to the tool's sweet spot than most professional-services tasks are, and because nothing in it says what the firm did with the hours.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers the anti-lever, the break button and the board range</span>
+      <h2>The cut that leaves the checking unstaffed</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">The anti-lever is the most common decision in the room: take the hours a tool saves, divide by a working year, and cut that many people. The bench takes rung 2's hours, cuts that headcount from the junior grade first, and then prints what the cut leaves behind.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two panels for Marlowe's 900 management analysts on default assumptions. Left, the wrong way, headcount on hours: 106 people cut against 26.1 FTE actually freed, leaving 79.9 FTE of work with nobody to do it, made of 71.8 FTE of review and 8.7 FTE of absorbed demand; the junior grade falls from 405 to 299. Right, capacity after review: 26.1 FTE freed, redeployed, junior intake kept.">
+        <defs>
+          <filter id="b4cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="53" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="b4cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#991B1B" stroke-width="1" opacity=".5"/></pattern>
+        </defs>
+        <style>
+          .b4cH { font: 800 12px Inter, sans-serif; fill: #2B1A1E; }
+          .b4cL { font: 600 12px Inter, sans-serif; fill: #2B1A1E; }
+          .b4cS { font: 400 11px Inter, sans-serif; fill: #6B595D; }
+          .b4cR { font: 800 12px Inter, sans-serif; fill: #991B1B; }
+          .b4cV { font: 800 12px Inter, sans-serif; fill: #741029; }
+          .b4cN { font: 400 12px Inter, sans-serif; fill: #6B595D; }
+        </style>
+
+        <text class="b4cH" x="30" y="26">900 MANAGEMENT ANALYSTS (CONSTRUCTED), DEFAULT ASSUMPTIONS</text>
+
+        <g filter="url(#b4cSk)" fill="none" stroke="#2B1A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="40" y="44" width="390" height="210" rx="12" transform="rotate(-0.4 235 149)" fill="#FEF2F2" stroke="#FCA5A5"/>
+          <rect x="450" y="44" width="390" height="210" rx="12" transform="rotate(0.4 645 149)" fill="#FCEFF2" stroke="#AE1941"/>
+          <rect x="60" y="104" width="350" height="22" rx="4" fill="#FFFFFF" stroke="#991B1B"/>
+          <rect x="60" y="148" width="86" height="22" rx="4" fill="#AE1941"/>
+          <rect x="146" y="148" width="264" height="22" rx="4" fill="url(#b4cHc)" stroke="#991B1B"/>
+          <rect x="470" y="104" width="86" height="22" rx="4" fill="#AE1941"/>
+        </g>
+
+        <text class="b4cR" x="58" y="72">Wrong way: headcount on hours</text>
+        <text class="b4cL" x="58" y="96">cut: 106 people (rung 2 hours)</text>
+        <text class="b4cL" x="58" y="142">really freed: 26.1 FTE (rung 4)</text>
+        <text class="b4cR" x="58" y="194">79.9 FTE of work, nobody to do it</text>
+        <text class="b4cS" x="58" y="212">71.8 review + 8.7 absorbed demand</text>
+        <text class="b4cS" x="58" y="234">junior grade 405 to 299, cut first</text>
+
+        <text class="b4cV" x="468" y="72">Capacity after review</text>
+        <text class="b4cL" x="468" y="96">freed: 26.1 FTE (rung 4)</text>
+        <text class="b4cS" x="468" y="148">redeploy into the demand that is coming</text>
+        <text class="b4cS" x="468" y="168">review hours staffed on purpose</text>
+        <text class="b4cS" x="468" y="188">junior intake kept: 405 stay the pipeline</text>
+        <text class="b4cS" x="468" y="208">a range for the board, not one number</text>
+
+        <text class="b4cN" x="30" y="282">Modelled on real O*NET tasks; the cut-from-the-junior-grade order is a stated assumption.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the hatched gap is the cost of the anti-lever: the review and the absorbed demand are still there after the people who would have done them have gone</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The anti-lever: count hours saved as headcount cut<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>For the management analysts on the defaults, rung 2 frees 106.6 FTE of time, so the anti-lever cuts 106 people. Rung 4, with review and absorbed demand back in, frees 26.1. The cut leaves 79.9 FTE of work with nobody to do it: 71.8 FTE of checking AI output that no one is staffed for, and 8.7 FTE of demand that arrived anyway. Taken from the junior grade first, the cut takes it from 405 to 299. Across the firm the same rule cuts 453 people and leaves 324.3 FTE unstaffed.</p>
+        <p>The honest nuance: the shortfall is only as large as the review and demand assumptions make it. Set review to zero and demand to zero and the gap almost closes, which is exactly the case the anti-lever is silently assuming. The junior-first order is a model, chosen because exposed tasks skew to entry-level work; session 3 covers why that is the rung a firm can least afford to lose.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The break button: drop the review time<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A bench that can only produce the answer you hoped for measures nothing. The break button sets review time to zero and recomputes. For the analysts, rung 4 jumps from 26.1 to 80.0 FTE; for the firm, from 128.7 to 356.0. Nothing about the work changed. The case got rosier because it now treats checking AI output as free.</p>
+        <p>That is not a hypothetical worry. In the METR trial, experienced developers forecast that AI would cut their completion time by 24 percent and believed afterwards that it had cut it by 20; measured, it made them 19 percent slower. Review and rework are where that gap lives.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Reading the board range<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Rung 5 recomputes rung 4 at a slow case (14 percent saved on E1 tasks, 15 percent review, half the freed time absorbed) and a fast case (50 percent saved, 5 percent review, nothing absorbed). For the analysts that is -48.0 to 177.4 FTE, and a reskilling payback from 2 months to never. A slow case below zero means review costs more than the tool saves; the bench prints "never" for its payback rather than a number.</p>
+        <p>A range this wide is the finding, not a failure of the model. It says the decision turns on two numbers nobody has measured for Marlowe: how long checking takes, and how much new work arrives. Session 5 turns that into a choice between building, buying, reskilling and waiting until one of them is measured.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="part-4">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · covers how big the speed-up really is</span>
+      <h2>The speed-up, as the studies disagree</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Every business case rests on one number: how much faster a task gets. The studies do not agree on it, and they are not measuring the same thing. Laid on one line for orientation, with the bench's range marked, they make the case for a range rather than a point.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A number line of change in time or throughput per task, from 20 percent slower to 50 percent faster. METR 2025: 19 percent slower, measured, experienced developers. Zero line. Brynjolfsson and colleagues: 14 percent more issues per hour, measured. Dell'Acqua and colleagues: roughly 25 percent faster inside the tool's range, reported. Eloundou and colleagues: the 50 percent rubric threshold, a potential, not a measurement. The bench's range runs from 14 to 50 percent, default 25.">
+        <defs>
+          <filter id="b4dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="59" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+        </defs>
+        <style>
+          .b4dH { font: 800 12px Inter, sans-serif; fill: #2B1A1E; }
+          .b4dL { font: 600 12px Inter, sans-serif; fill: #2B1A1E; }
+          .b4dS { font: 400 11px Inter, sans-serif; fill: #6B595D; }
+          .b4dB { font: 800 11px Inter, sans-serif; fill: #6B4E1C; }
+          .b4dV { font: 800 13px Inter, sans-serif; fill: #741029; }
+          .b4dN { font: 400 12px Inter, sans-serif; fill: #6B595D; }
+        </style>
+
+        <text class="b4dH" x="30" y="26">HOW MUCH FASTER? FIVE ANSWERS ON ONE LINE</text>
+
+        <g filter="url(#b4dSk)" fill="none" stroke="#2B1A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="460" y="112" width="360" height="20" rx="6" fill="#E9D8B4"/>
+          <path d="M100 122 L840 122"/>
+          <path d="M320 104 L320 140" stroke-dasharray="4 4"/>
+          <circle cx="130" cy="122" r="7" fill="#FFFFFF"/>
+          <circle cx="460" cy="122" r="7" fill="#AE1941"/>
+          <circle cx="570" cy="122" r="7" fill="#AE1941"/>
+          <circle cx="820" cy="122" r="7" fill="#FFFFFF"/>
+        </g>
+
+        <text class="b4dS" x="100" y="160" text-anchor="start">20% slower</text>
+        <text class="b4dS" x="320" y="160" text-anchor="middle">no change</text>
+        <text class="b4dS" x="840" y="160" text-anchor="end">50% faster</text>
+        <text class="b4dV" x="130" y="64" text-anchor="middle">-19%</text>
+        <text class="b4dL" x="130" y="82" text-anchor="middle">METR 2025</text>
+        <text class="b4dS" x="130" y="98" text-anchor="middle">measured, slower</text>
+        <text class="b4dV" x="460" y="64" text-anchor="middle">+14%</text>
+        <text class="b4dL" x="460" y="82" text-anchor="middle">Brynjolfsson et al.</text>
+        <text class="b4dS" x="460" y="98" text-anchor="middle">issues per hour</text>
+        <text class="b4dV" x="590" y="190" text-anchor="middle">about 25%</text>
+        <text class="b4dL" x="590" y="208" text-anchor="middle">Dell'Acqua et al.</text>
+        <text class="b4dS" x="590" y="224" text-anchor="middle">faster, reported</text>
+        <text class="b4dV" x="790" y="64" text-anchor="middle">50%</text>
+        <text class="b4dL" x="790" y="82" text-anchor="middle">rubric line</text>
+        <text class="b4dS" x="790" y="98" text-anchor="middle">a potential</text>
+        <text class="b4dB" x="640" y="190" text-anchor="start">bench range</text>
+
+        <text class="b4dN" x="30" y="254">Throughput, speed and a threshold are different measures; the line is for orientation, not comparison.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the sand band is the bench's E1 range; the one measurement of experienced people on their own work sits below zero</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The disagreement, as it stands<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Field gains are real and uneven.</strong> Brynjolfsson, Li and Raymond measured 14 percent more issues resolved per hour, concentrated among novices. Dell'Acqua and colleagues' 758 consultants completed 12.2 percent more subtasks and worked roughly 25 percent faster on tasks inside the tool's range; on a task built to fall outside it, 84.5 percent were correct without AI and 70.6 percent with it (reported, from Harvard Business School's summary of the published paper).</p>
+        <p><strong>Experienced people on their own work can get slower.</strong> The METR trial of 16 experienced developers on 246 tasks measured a 19 percent slowdown, against their own forecast of a 24 percent speed-up.</p>
+        <p><strong>The economy-wide view is small.</strong> Acemoglu's estimate is no more than a 0.66 percent rise in total factor productivity over ten years, less than 0.53 percent once hard-to-learn tasks are counted. That is a different unit, a whole economy over a decade, and it is the low side of a live argument, not a refutation of the field studies. None of this is settled, and the bench does not settle it: it makes you choose an assumption and shows you what the choice costs.</p>
+      </div>
+    </details>
+
+    <div class="callout tip">
+      <p><strong>The sentence to use with a board.</strong> "On the published task data and our stated assumptions, this role ends up anywhere from 48.0 FTE short, if checking costs more than the tool saves, to 177.4 FTE freed; the range is wide because we have not yet measured our own review time or our demand, and the first quarter of the programme measures both."</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 5</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Run your session 1 role.</strong> Paste your hours as time shares and write down rung 1, rung 4 and the rung 5 range.</li>
+      <li><strong>Find the assumption that moves your role most.</strong> Move each slider from its slow to its fast end on its own and note which one shifts rung 4 furthest.</li>
+      <li><strong>Try the anti-lever on your role</strong> and write the shortfall and the junior number in one sentence a finance director would read.</li>
+      <li><strong>Switch the labeller.</strong> Note whether GPT-4's labels change your role's story, and which tasks flip.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 4 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · For the management analysts, rung 1 says 81.8% and rung 2 says 11.8%. What explains most of that drop?</p>
+      <button class="qopt" type="button">A · The review time added back on exposed tasks</button>
+      <button class="qopt" type="button">B · Rung 1 counts exposed tasks as if they took no time; rung 2 weights each task by its share of the week and saves only the assumed speed-up on it</button>
+      <button class="qopt" type="button">C · GPT-4's labels are stricter than the human labels</button>
+      <button class="qopt" type="button">D · Demand rebound absorbs most of the freed time</button>
+      <p class="qwhy">Review arrives at rung 3 and demand at rung 4, and both rungs use the human labels by default. The drop from rung 1 to rung 2 is the change of unit from tasks to time: an exposed task gets faster, it does not vanish.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">2 · The anti-lever cuts 106 analysts on rung 2's hours. What does the bench say that decision gets wrong?</p>
+      <button class="qopt" type="button">A · Nothing; the cut matches the time saved</button>
+      <button class="qopt" type="button">B · It cuts too few people, because rung 1 was higher</button>
+      <button class="qopt" type="button">C · It only matters if GPT-4's labels are used</button>
+      <button class="qopt" type="button">D · Rung 4 frees only 26.1 FTE, so the cut leaves 79.9 FTE of review and absorbed demand with nobody to do it, and takes the junior grade from 405 to 299</button>
+      <p class="qwhy">The cut is sized on time saved before anyone checks the output or any new work arrives. Both still happen. The shortfall is modelled, and its size moves with the review and demand assumptions; its sign does not, unless both are zero.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · A vendor's case shows a much larger saving than your rung 4. Which question does the break button teach you to ask first?</p>
+      <button class="qopt" type="button">A · Where is the time someone spends checking the output, and what happens to the number when it goes back in?</button>
+      <button class="qopt" type="button">B · Which model version did they use?</button>
+      <button class="qopt" type="button">C · How many tasks did they label exposed?</button>
+      <button class="qopt" type="button">D · Is their speed-up above 50 percent?</button>
+      <p class="qwhy">Dropping review makes the case rosier with no change in the work: for the analysts, rung 4 goes from 26.1 to 80.0 FTE. A count of exposed tasks is rung 1's mistake, and a model version says nothing about who checks the output.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Every task row on the bench</span><span class="note">624 task statements with importance and frequency for 34 occupations from the O*NET 31.0 Database by USDOL/ETA (CC BY 4.0), joined to the human and GPT-4 exposure labels released with Eloundou et al. (2023, MIT); modified by joining and reducing; Python and browser engines agree on 938 values</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Brynjolfsson, Li and Raymond (QJE 2025); Becker et al. (METR, arXiv 2507.09089); Acemoglu (Economic Policy 2025)</span><span class="note">Each read at source as an abstract; the numbers quoted are the abstracts' own</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Dell'Acqua et al. (Organization Science 2026)</span><span class="note">Reported from Harvard Business School's summary of the published paper; the paper itself was not read</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Speed-up, review, demand and cost assumptions</span><span class="note">Modelled; defaults and their basis in the source map; no study measures review time or absorbed demand at firm scale</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Marlowe Group headcount and junior grade</span><span class="note">Constructed for teaching</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 4 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Five rungs</b><span>Naive count, time shares and speed-up, review, demand rebound, a range.</span></div>
+      <div class="cheat-item"><b>Tasks are not time</b><span>Analysts: 81.8% naive, 11.8% once tasks are weighted by time.</span></div>
+      <div class="cheat-item"><b>Review eats E2</b><span>E2 saves 12.5% on the default; checking costs 10. Firm: 474.7 to 171.5 FTE.</span></div>
+      <div class="cheat-item"><b>Do not cut on hours</b><span>Analysts: 106 cut, 79.9 FTE unstaffed, junior grade 405 to 299.</span></div>
+      <div class="cheat-item"><b>The break button</b><span>Free review turns 26.1 FTE into 80.0. Ask where the checking went.</span></div>
+      <div class="cheat-item"><b>A range, not a point</b><span>The studies run from 19% slower to about 25% faster. Show the board both ends.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>The bench says the analysts' case turns on review time and demand, two numbers Marlowe has not measured. Session 5 turns that into a choice for each role: build the software the E2 tasks need, buy it, reskill the people around it, or wait until the first quarter has measured what matters.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 4 of 6 · learn-leadership-ai-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="03-spans-layers-junior-rung.html">← Prev: New shapes: spans, layers and the missing junior rung</a> &nbsp;·&nbsp; <a href="05-build-buy-reskill-wait.html">Next: Build, buy, reskill or wait →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/org-sample.js?v=1"></script>
+<script src="../assets/org-live.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>
